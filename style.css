@@ -1,0 +1,219 @@
+:root {
+  --image-url: url("img/background-image-1.png");
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+}
+body {
+  background-color: rgb(37, 41, 52);
+  font-family: "Titillium Web", sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 97vh;
+  /* background-image: url(https://www.tokkoro.com/picsup/5746854-geometry-wallpapers.jpg); */
+  background-size: cover;
+  overflow: hidden;
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background: url("https://www.tokkoro.com/picsup/5746854-geometry-wallpapers.jpg") no-repeat center center; */
+  background-size: cover;
+  z-index: -1;
+  transform: scale(1.1);
+}
+.container {
+  width: 300px;
+  display: flex;
+  flex-flow: column;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 14px;
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  /* position: absolute; */
+}
+.header {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  height: 170px;
+  background-image: var(--image-url);
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  color: white;
+}
+#date {
+  position: absolute;
+  bottom: 5px;
+  margin: 5px 10px;
+  font-size: 15pt;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+          supported by Chrome, Opera and Firefox */
+}
+.content {
+  height: 300px;
+  margin: 0;
+  background-color: #fff;
+  overflow: auto;
+}
+.flex {
+  display: flex;
+}
+.no-content p {
+  text-align: center;
+  font-size: 15pt;
+}
+#todos {
+  margin: auto;
+}
+.add-item {
+  display: flex;
+  background-color: white;
+  font-size: 20pt;
+  border-top: 1px solid #ccc;
+  padding: 8px;
+  align-items: center;
+  color: #1663c0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.add-item input {
+  width: 293px;
+  height: 25px;
+  border: none;
+  font-size: 12pt;
+  margin: 5px 5px 5px 14px;
+  padding: 5px;
+}
+.add-item input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #1663c0;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #1663c0;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #1663c0;
+}
+.add-item input:focus::placeholder {
+  color: transparent;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.item {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+  animation: slide-up 0.5s ease;
+}
+.item p {
+  overflow: hidden;
+  padding-left: 10px;
+  padding-bottom: 2px;
+}
+.fa-trash-o {
+  margin-left: auto;
+}
+.lineThrough {
+  text-decoration: line-through;
+  color: rgb(129, 128, 128);
+}
+.clear {
+  height: 40px;
+  margin-left: auto;
+  padding: 10px 15px;
+  font-size: 20pt;
+}
+.clear i:hover {
+  transform: rotate(45deg);
+}
+.clear i {
+  cursor: pointer;
+}
+.fa-check-circle {
+  color: green;
+}
+.fa-plus-circle {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+@media (max-width: 600px) {
+  body {
+    height: auto;
+    margin: 0;
+  }
+  .container {
+    width: 100%;
+    height: 85vh;
+    margin: 0px;
+    padding: 0;
+  }
+  .header {
+    border-radius: 0;
+    height: 42vh;
+  }
+  .content {
+    height: 100%;
+  }
+  .item {
+    height: 9vh;
+    font-size: 15pt;
+  }
+  .add-item {
+    border-radius: 0;
+  }
+  .add-item input {
+    height: 5vh;
+    font-size: 15pt;
+  }
+  i {
+    font-size: 20pt;
+  }
+  .no-content p {
+    font-size: 20pt;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.content {
+  animation: expand-out 1.5s ease;
+}
+
+@keyframes expand-out {
+  0% {height: 0;}
+  50% {height: 0;}
+  100% {height: 300px;}
+}
